@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Boxicons CDN Link -->
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+        <!-- CSS Style -->
+        <link rel="stylesheet" href="style.css" />
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: " #800080",
+                            secondary: "#daa520",
+                        },
+                        width: {
+                            last: "95%",
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <title>SIM CDC | Kategori Pekerjaan</title>
+    </head>
+    <body>
+        <div class="mx-auto flex flex-col min-h-screen">
+            <!-- Navbar Start -->
+            <nav class="top-0">
+                <nav class="bg-gray-50 rounded-b-md border-b-2 border-gray-300 shadow-sm">
+                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                        <a href="#" class="flex items-center">
+                            <img src="../media/piksi.png" class="h-10 md:h-12 mr-3" alt="CDC Logo" />
+                            <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap">Career Development Center</span>
+                        </a>
+                        <div class="flex md:order-2">
+                            <button
+                                type="button"
+                                data-collapse-toggle="navbar-search"
+                                aria-controls="navbar-search"
+                                aria-expanded="false"
+                                class="md:hidden focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+                            >
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                            <div class="relative hidden md:block">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                    <span class="sr-only">Search icon</span>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="search-navbar"
+                                    class="block w-full text-gray-900 p-2 pl-10 text-sm border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Search..."
+                                />
+                            </div>
+                            <button
+                                data-collapse-toggle="navbar-search"
+                                type="button"
+                                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                aria-controls="navbar-search"
+                                aria-expanded="false"
+                            >
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                            <div class="relative mt-3 md:hidden">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="search-navbar"
+                                    class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Search..."
+                                />
+                            </div>
+                            <ul
+                                class="flex flex-col p-4 md:p-0 mt-4 lg:text-base font-medium border border-gray-100 rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+                            >
+                                <li>
+                                    <a
+                                        href="../index.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Beranda</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="profil-cdc.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Profil CDC</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="kategori-pekerjaan.html"
+                                        class="block py-2 pl-3 pr-4 md:text-primary underline bg-primary rounded md:bg-transparent md:p-0"
+                                        aria-current="page"
+                                        >Kategori Pekerjaan</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="berita-tips.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Berita & Tips</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="tentang-kami.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Tentang kami</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="mx-auto md:w-last rounded-b-md border-b-2 border-gray-300">
+                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                        <!-- Time Section (Left) -->
+                        <div class="time flex text-center">
+                            <div class="display-date rounded-md cursor-pointer">
+                                <div class="calender hidden md:block">
+                                    <span id="day">day</span>,
+                                    <span id="daynum">00</span>
+                                    <span id="month">month</span>
+                                    <span id="year">0000</span>
+                                </div>
+                                <span class="display-time text-sm md:text-base"></span>
+                            </div>
+                        </div>
+                        <!-- Login-User Section (Right) -->
+                        <div class="login-user rounded-full cursor-pointer">
+                            <span id="userPic" class="text-sm md:text-base text-white">
+                                <img src="../media/huh.jpg" alt="userPic" class="rounded-full h-8 md:h-10" />
+                            </span>
+                            <div id="menuContainer" class="hidden absolute right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-xl z-10">
+                                <ul class="py-1 bg-primary rounded-md">
+                                    <li>
+                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
+                                            <span class="bx bx-key"></span> Change Password
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
+                                            <span class="bx bxs-log-out"></span> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Main Content Start -->
+            <main class="flex-1 w-full md:w-11/12 mx-auto">
+                <!-- Back Beranda Start -->
+                <div class="p-5 my-3 font-medium rounded-t-lg rounded-b-md border-b-2 border-gray-300">
+                    <a href="#" class="text-primary hover:text-black">Beranda</a>
+                    <span>| Kategori Pekerjaan</span>
+                </div>
+                <!-- Back Beranda End -->
+
+                <!-- Section Carousel Start -->
+                <section class="mt-5">
+                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-96 md:h-[500px] overflow-hidden rounded-lg">
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/1.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/2.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/3.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/4.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/5.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/6.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/7.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/8.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/9.jpeg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img
+                                    src="../media/10.jpg"
+                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="carousel image"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Slider controls -->
+                        <button
+                            type="button"
+                            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            data-carousel-prev
+                        >
+                            <span
+                                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                            >
+                                <svg
+                                    aria-hidden="true"
+                                    class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            data-carousel-next
+                        >
+                            <span
+                                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+                            >
+                                <svg
+                                    aria-hidden="true"
+                                    class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </section>
+                <!-- Section Carousel End -->
+
+                <!-- Section Card Menus Start -->
+                <section class="mt-12 cf">
+                    <aside id="aside-container" class="md:w-2/5 sm:w-full md:float-left my-5 border-r-2 border-y-4 border-gray-100 rounded-r-2xl shadow-sm">
+                        <!-- Card Menus Start -->
+                        <div class="flex flex-wrap justify-evenly box-border p-5">
+                            <div class="card bg-gray-50 flex mx-auto w-5/6 my-5 py-3 rounded-lg shadow-md border border-gray-200 hover:shadow-xl">
+                                <div>
+                                    <div class="flex justify-center m-2">
+                                        <img src="../media/1.jpg" alt="Logo Perusahaan" class="rounded-lg w-20 object-cover" />
+                                    </div>
+                                    <div class="m-1">
+                                        <h2 class="text-center font-medium text-lg">Junior Web Developer</h2>
+                                        <h4 class="text-center text-sm">PT. Jaya Teknologi | <span class="bx bx-location-plus"> Bandung, Indonesia</span></h4>
+                                        <p class="text-sm m-3 text-justify">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque enim iure labore optio laborum ducimus id autem nihil ut.
+                                            <a href="../pekerjaan/pekerjaan1.html" class="text-primary hyperlink">Selengkapnya...</a>
+                                        </p>
+                                        <span class="block text-sm font-medium m-3 text-justify">IDR 8 - 10 Juta Per Bulan</span>
+                                        <div class="flex justify-center">
+                                            <button class="w-4/5 text-center text-sm p-3 m-2 bg-primary text-white rounded-md hover:underline hover:font-medium">
+                                                Lamar Pekerjaan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card lainnya -->
+                            <div class="card bg-gray-50 flex mx-auto w-5/6 my-5 py-3 rounded-lg shadow-md border border-gray-200 hover:shadow-xl">
+                                <div>
+                                    <div class="flex justify-center m-2">
+                                        <img src="../media/2.jpg" alt="Logo Perusahaan" class="rounded-lg w-20 object-cover" />
+                                    </div>
+                                    <div class="m-1">
+                                        <h2 class="text-center font-medium text-lg">Senior SEO Writer</h2>
+                                        <h4 class="text-center text-sm">PT MainGames Indonesia | <span class="bx bx-location-plus"> Jakarta, Indonesia</span></h4>
+                                        <p class="text-sm m-3 text-justify">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate at tenetur cum repellat, aliquam ea.
+                                            <a href="../pekerjaan/pekerjaan2.html" class="text-primary hyperlink">Selengkapnya...</a>
+                                        </p>
+                                        <span class="block text-sm font-medium m-3 text-justify">IDR 10 Juta - 15 Juta Per Bulan</span>
+                                        <div class="flex justify-center">
+                                            <button class="w-4/5 text-center text-sm p-3 m-2 bg-primary text-white rounded-md hover:underline hover:font-medium">
+                                                Lamar Pekerjaan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-gray-50 flex mx-auto w-5/6 my-5 py-3 rounded-lg shadow-md border border-gray-200 hover:shadow-xl">
+                                <div>
+                                    <div class="flex justify-center m-2">
+                                        <img src="../media/3.jpg" alt="Logo Perusahaan" class="rounded-lg w-20 object-cover" />
+                                    </div>
+                                    <div class="m-1">
+                                        <h2 class="text-center font-medium text-lg">Konsultan IT</h2>
+                                        <h4 class="text-center text-sm">PT. Sharing Vision Indonesia | <span class="bx bx-location-plus"> Palembang, Indonesia</span></h4>
+                                        <p class="text-sm m-3 text-justify">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, molestiae commodi dolorem inventore quia veritatis nisi, eius
+                                            nemo numquam omnis labore vero sint reiciendis qui!
+                                            <a href="../pekerjaan/pekerjaan3.html" class="text-primary hyperlink">Selengkapnya...</a>
+                                        </p>
+                                        <span class="block text-sm font-medium m-3 text-justify">IDR 10 - 15 Juta Per Bulan</span>
+                                        <div class="flex justify-center">
+                                            <button class="w-4/5 text-center text-sm p-3 m-2 bg-primary text-white rounded-md hover:underline hover:font-medium">
+                                                Lamar Pekerjaan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Menus End -->
+                    </aside>
+                    <section class="hidden md:block md:w-7/12 sm:w-full md:float-right my-5" id="target-section">
+                        <!-- Konten halaman hyperlink akan ditampilkan di sini -->
+                        <img src="../media/skets.png" alt="skets Illustration" />
+                    </section>
+                </section>
+                <!-- Section Card Menus End -->
+            </main>
+            <!-- Main Content End -->
+
+            <!-- Main Footer Start -->
+            <footer class="mt-16 bg-white border-t-2 border-gray-300 shadow-md">
+                <div class="mx-auto w-full max-w-screen-xl">
+                    <div class="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                        <div>
+                            <img src="../media/piksi.png" alt="piksi logo" class="w-5/12 md:w-2/3" />
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Temukan kami</h2>
+                            <p class="mb-4 text-gray-500 font-medium mr-3">
+                                <i class="bx bx-current-location"></i> Jl. Gatot Subroto No.301, Maleer, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
+                            </p>
+                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-mail-send"></i> piksiganeshaonline@gmail.com</p>
+                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-phone"></i> (022) 87340030</p>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Quick Links</h2>
+                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                                <li class="mb-4">
+                                    <a href="../index.html" class="hover:underline">Beranda</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="profil-cdc.html" class="hover:underline">Profil CDC</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="kategori-pekerjaan.html" class="hover:underline">Kategori Pekerjaan</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="berita-tips.html" class="hover:underline">Berita & Tips</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="tentang-kami.html" class="hover:underline">Tentang kami</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
+                                width="auto"
+                                height="220"
+                                style="border: 0"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer>
+                <div class="px-4 py-6 rounded-t-lg border-t-2 border-gray-300 shadow-md md:flex md:items-center md:justify-between">
+                    <span class="text-sm text-gray-500 font-medium sm:text-center">© 2023 <a href="../index.html">SIM CDC™</a>. All Rights Reserved. </span>
+                    <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+                        <span
+                            ><a href="https://api.whatsapp.com/send?phone=628156027000" target="_blank" rel="noopener noreferrer">
+                                <img src="../media/icon/whatsapp.png" alt="ppgWhatsapp" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://instagram.com/piksi_ganesha/" target="_blank" rel="noopener noreferrer">
+                                <img src="../media/icon/instagram.png" alt="ppgInstagram" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://www.facebook.com/piksiganeshabdg1" target="_blank" rel="noopener noreferrer"
+                                ><img src="../media/icon/facebook.png" alt="ppgFacebook" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://www.youtube.com/channel/UCD8IxCl1KY3fvkR0b9BOiqQ" target="_blank" rel="noopener noreferrer"
+                                ><img src="../media/icon/youtube.png" alt="ppgYoutube" class="h-5"
+                            /></a>
+                        </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- Main Footer End -->
+        </div>
+    </body>
+    <script src="../script.js"></script>
+</html>

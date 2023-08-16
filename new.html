@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Boxicons CDN Link -->
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+        <!-- CSS Style -->
+        <link rel="stylesheet" href="style.css" />
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: " #800080",
+                            secondary: "#daa520",
+                        },
+                        width: {
+                            last: "95%",
+                        },
+                    },
+                },
+            };
+        </script>
+        <title>Tab Example</title>
+    </head>
+    <body>
+        <section class="mt-5">
+            <div class="text-sm font-medium text-center text-gray-500 border-gray-200 dark:text-gray-400 dark:border-gray-700">
+                <ul class="flex justify-center -mb-px">
+                    <li class="mr-2">
+                        <a href="#tab-visi-misi" class="tab-link inline-block rounded-md active-tab" aria-current="page">Visi & Misi</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#tab-tujuan" class="tab-link inline-block rounded-md" aria-current="page">Tujuan</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#tab-tentang-kami" class="tab-link inline-block rounded-md" aria-current="page">Tentang kami</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#tab-temukan-kami" class="tab-link inline-block rounded-md" aria-current="page">Temukan kami</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div id="tab-visi-misi" class="tab-pane show">
+                    <!-- Menambahkan kelas show -->
+                    <!-- Konten Tab Visi & Misi -->
+                    <p>tab2</p>
+                </div>
+                <div id="tab-tujuan" class="tab-pane hidden">
+                    <!-- Konten Tab Tujuan -->
+                    <p>tab3</p>
+                </div>
+                <div id="tab-tentang-kami" class="tab-pane hidden">
+                    <!-- Konten Tab Tentang Kami -->
+                    <p>tab4</p>
+                </div>
+                <div id="tab-temukan-kami" class="tab-pane hidden">
+                    <!-- Konten Tab Temukan Kami -->
+                    <section class="mt-12 cf">
+                        <!-- Konten tab temukan kami -->
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabLinks = document.querySelectorAll(".tab-link");
+                const tabContents = document.querySelectorAll(".tab-pane");
+
+                tabLinks.forEach((link) => {
+                    link.addEventListener("click", (e) => {
+                        e.preventDefault();
+
+                        tabLinks.forEach((l) => l.classList.remove("active-tab"));
+                        link.classList.add("active-tab");
+
+                        const targetTabId = link.getAttribute("href");
+                        tabContents.forEach((content) => {
+                            content.classList.remove("show");
+                            if (`#${content.id}` === targetTabId) {
+                                content.classList.add("show");
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
