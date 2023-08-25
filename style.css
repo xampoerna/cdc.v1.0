@@ -3,7 +3,8 @@
 }
 
 /* CSS untuk tampilan tab */
-.tab-link {
+.tab-link-profil,
+.tab-link-ma {
     padding: 12px 20px;
     background-color: white;
     text-decoration: none;
@@ -16,19 +17,22 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.tab-link.active-tab {
+.tab-link-profil.active-tab,
+.tab-link-ma.active-tab {
     background-color: purple;
     color: white;
     border-color: purple;
 }
 
-.tab-link:hover:not(.active-tab) {
+.tab-link-profil:hover:not(.active-tab),
+.tab-link-ma:hover:not(.active-tab) {
     background-color: purple;
     color: white;
     text-decoration-line: underline;
 }
 
-.tab-content .tab-pane {
+.tab-content .tab-pane-profil,
+.tab-content .tab-pane-ma {
     display: none;
 }
 

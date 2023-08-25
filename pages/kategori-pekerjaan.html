@@ -13,6 +13,9 @@
         <!-- CSS Style -->
         <link rel="stylesheet" href="style.css" />
 
+        <!-- Favicon PPG -->
+        <link rel="shortcut icon" href="../media/favicon/favicon.ico" type="image/x-icon" />
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <script>
@@ -339,11 +342,14 @@
                                         <h4 class="text-center text-sm">PT. Jaya Teknologi | <span class="bx bx-location-plus"> Bandung, Indonesia</span></h4>
                                         <p class="text-sm m-3 text-justify">
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque enim iure labore optio laborum ducimus id autem nihil ut.
-                                            <a href="../pekerjaan/pekerjaan1.html" class="text-primary hyperlink">Selengkapnya...</a>
+                                            <a href="#" class="text-primary hyperlink job-button" data-job-id="1">Selengkapnya...</a>
                                         </p>
                                         <span class="block text-sm font-medium m-3 text-justify">IDR 8 - 10 Juta Per Bulan</span>
                                         <div class="flex justify-center">
-                                            <button class="w-4/5 text-center text-sm p-3 m-2 bg-primary text-white rounded-md hover:underline hover:font-medium">
+                                            <button
+                                                class="w-4/5 text-center text-sm p-3 m-2 bg-primary text-white rounded-md hover:underline hover:font-medium job-button"
+                                                data-job-id="1"
+                                            >
                                                 Lamar Pekerjaan
                                             </button>
                                         </div>
@@ -397,7 +403,7 @@
                         </div>
                         <!-- Card Menus End -->
                     </aside>
-                    <section class="hidden md:block md:w-7/12 sm:w-full md:float-right my-5" id="target-section">
+                    <section id="job-details" class="hidden md:block md:w-7/12 sm:w-full md:float-right my-5" id="target-section">
                         <!-- Konten halaman hyperlink akan ditampilkan di sini -->
                         <img src="../media/skets.png" alt="skets Illustration" />
                     </section>
@@ -441,10 +447,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="w-full">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
-                                width="auto"
+                                width="100%"
                                 height="220"
                                 style="border: 0"
                                 allowfullscreen=""
@@ -484,6 +490,38 @@
             </footer>
             <!-- Main Footer End -->
         </div>
+        <script>
+            const jobButtons = document.querySelectorAll(".job-button");
+            const jobDetailsContainer = document.getElementById("job-details");
+
+            const jobData = [
+                {
+                    id: 1,
+                    title: "Junior Web Developer",
+                    company: "PT. Jaya Teknologi",
+                    location: "Bandung, Indonesia",
+                    description: "Deskripsi pekerjaan untuk Junior Web Developer...",
+                    salary: "IDR 8 - 10 Juta Per Bulan",
+                },
+                // ...Tambahkan data pekerjaan lainnya...
+            ];
+
+            jobButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const jobId = this.getAttribute("data-job-id");
+                    const job = jobData.find((item) => item.id === parseInt(jobId));
+
+                    if (job) {
+                        jobDetailsContainer.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p>${job.company} - ${job.location}</p>
+                    <p>${job.description}</p>
+                    <p>${job.salary}</p>`;
+                        jobDetailsContainer.classList.remove("hidden");
+                    }
+                });
+            });
+        </script>
     </body>
     <script src="../script.js"></script>
 </html>

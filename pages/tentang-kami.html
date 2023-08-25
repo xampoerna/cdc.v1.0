@@ -13,6 +13,9 @@
         <!-- CSS Style -->
         <link rel="stylesheet" href="style.css" />
 
+        <!-- Favicon PPG -->
+        <link rel="shortcut icon" href="../media/favicon/favicon.ico" type="image/x-icon" />
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <script>
@@ -332,31 +335,107 @@
                 </div>
 
                 <!-- Section Content Menus Start -->
-                <section>
+                <section class="flex flex-wrap">
+                    <!-- Bagian Kiri (Aside) -->
                     <aside id="aside-container" class="md:w-2/5 sm:w-full md:float-left my-5 border-r-2 border-y-4 border-gray-100 rounded-r-2xl shadow-sm">
-                        <!-- Carousel Menus Start -->
+                        <!-- Konten Bagian Kiri -->
                         <div class="flex flex-wrap justify-evenly box-border p-5">
                             <img src="../media/4.jpg" alt="about pic" class="rounded-md" />
                         </div>
-                        <!-- Carousel Menus End -->
                     </aside>
-                    <section class="md:w-7/12 sm:w-full md:float-right">
-                        <div class="p-5">
-                            <h2 class="text-center font-semibold text-lg md:font-bold md:text-5xl md:text-left">Kenapa harus bergabung dengan kami?</h2>
+                    <!-- Bagian Kanan (Section) -->
+                    <section class="md:w-3/5 sm:w-full md:float-right p-5">
+                        <!-- Konten Bagian Kanan -->
+                        <h2 class="text-center font-semibold text-lg md:font-bold md:text-5xl md:text-left">Kenapa harus bergabung dengan kami?</h2>
 
-                            <!-- Horizontal Line as Separator -->
-                            <hr class="mt-5 md:hidden border-t-2 border-gray-300 dark:border-gray-700 mx-auto mb-10" />
-                            <p class="text-justify md:my-8">
-                                Career Development Center (CDC) Politeknik Piksi Ganesha Bandung memiliki tujuan untuk menjadi mediator yang baik antara para pencari kerja dengan
-                                perusahaan/instansi/industri yang sedang membutuhkan tenaga kerja. Dalam pelaksanaan semua kegiatan, CDC bermitra dengan perusahaan untuk memberikan
-                                manfaat bersama bagi semua pemangku kepentingan, serta membantu melakukan tracer study terhadap lulusan dan pengguna lulusan Piksi Ganesha. Selain
-                                itu, CDC diharapkan mampu menjadi mitra terpercaya bagi perusahaan pengguna dan mahasiswa serta lulusan PIKSI GANESHA. Tiga kegiatan utama yang
-                                dilakukan oleh CDC adalah program persiapan karir (seminar), Campus Hiring, dan tracer study.
-                            </p>
-                        </div>
+                        <!-- Horizontal Line as Separator -->
+                        <hr class="mt-5 md:hidden border-t-2 border-gray-300 dark:border-gray-700 mx-auto mb-10" />
+                        <p class="text-justify md:my-8">
+                            Career Development Center (CDC) Politeknik Piksi Ganesha Bandung memiliki tujuan untuk menjadi mediator yang baik antara para pencari kerja dengan
+                            perusahaan/instansi/industri yang sedang membutuhkan tenaga kerja. Dalam pelaksanaan semua kegiatan, CDC bermitra dengan perusahaan untuk memberikan
+                            manfaat bersama bagi semua pemangku kepentingan, serta membantu melakukan tracer study terhadap lulusan dan pengguna lulusan Piksi Ganesha. Selain itu,
+                            CDC diharapkan mampu menjadi mitra terpercaya bagi perusahaan pengguna dan mahasiswa serta lulusan PIKSI GANESHA. Tiga kegiatan utama yang dilakukan
+                            oleh CDC adalah program persiapan karir (seminar), Campus Hiring, dan tracer study.
+                        </p>
                     </section>
                 </section>
                 <!-- Section Content Menus End -->
+
+                <!-- Contact Form Start -->
+                <section class="flex flex-wrap mt-16">
+                    <div class="md:w-7/12 md:p-3 md:py-5 md:rounded-md bg-white md:border">
+                        <div class="px-4 mx-auto">
+                            <h2 class="mb-4 text-xl md:text-2xl font-bold text-justify text-gray-900 dark:text-white">Hubungi kami</h2>
+                            <p class="mb-6 lg:mb-10 text-justify">
+                                Tinggalkan pesan jika ada pertanyaan yang berhubungan dengan Program
+                                <span class="font-medium">Career Development Center (CDC) Politeknik Piksi Ganesha</span>
+                            </p>
+                            <form action="#" class="space-y-8">
+                                <div>
+                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="name@gmail.com"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subjek</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                        placeholder="Beri tahu kami bagaimana kami dapat membantu Anda"
+                                        required
+                                    />
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Masukkan pesan</label>
+                                    <textarea
+                                        id="message"
+                                        rows="6"
+                                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Masukkan pesan..."
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="py-3 px-5 text-sm font-medium bg-primary text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                >
+                                    Kirim pesan
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="md:w-2/5 md:ml-5 md:p-3 md:py-5 md:rounded-md bg-white md:border md:border-r-2">
+                        <div class="px-4 mx-auto">
+                            <h2 class="mb-4 text-xl md:text-2xl font-bold text-justify text-gray-900 dark:text-white">Kunjungi kami</h2>
+                            <div class="mt-0 md:mt-8">
+                                <div class="d-flex flex-column mb-5">
+                                    <h5 class="font-weight-semi-bold mb-3">Kampus A - Fakultas Ekonomi dan Bisnis</h5>
+                                    <p class="mb-2">
+                                        <i class="bx bx-current-location text-primary mr-3"></i>Jl. Gatot Subroto No.301, Maleer, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
+                                    </p>
+                                    <p class="mb-2"><i class="bx bx-mail-send text-primary mr-3"></i>piksiganeshaonline@gmail.com</p>
+                                    <p class="mb-2"><i class="bx bx-phone text-primary mr-3"></i>(022) 87340030</p>
+                                </div>
+                                <hr />
+                                <br />
+                                <div class="d-flex flex-column">
+                                    <h5 class="font-weight-semi-bold mb-3">Kampus B [Fakultas Kesehatan] dan Kampus C [Fakultas IT]</h5>
+                                    <p class="mb-2">
+                                        <i class="bx bx-current-location text-primary mr-3"></i>Jl. Gatot Subroto No.335, Gumuruh, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
+                                    </p>
+                                    <p class="mb-2"><i class="bx bx-mail-send text-primary mr-3"></i>piksiganeshaonline@gmail.com</p>
+                                    <p class="mb-0"><i class="bx bx-phone text-primary mr-3"></i>(022) 87340030</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Contact Form End -->
             </main>
             <!-- Main Content End -->
 
@@ -395,10 +474,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="w-full">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
-                                width="auto"
+                                width="100%"
                                 height="220"
                                 style="border: 0"
                                 allowfullscreen=""
