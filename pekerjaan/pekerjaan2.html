@@ -10,134 +10,481 @@
         <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 
         <!-- CSS Style -->
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../style.css" />
+
+        <!-- Favicon PPG -->
+        <link rel="shortcut icon" href="../media/favicon/favicon.ico" type="image/x-icon" />
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <title>Document</title>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: " #800080",
+                            secondary: "#daa520",
+                        },
+                        width: {
+                            last: "95%",
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <title>Pekerjaan</title>
     </head>
     <body>
-        <section class="mx-10 border border-gray-200 rounded-lg p-3">
-            <div class="header">
-                <div class="flex justify-center m-2">
-                    <img src="media/2.jpg" alt="Logo Perusahaan" class="rounded-lg w-20 object-cover" />
-                </div>
-                <div class="m-1 tracking-wide leading-relaxed">
-                    <h2 class="text-center font-medium text-lg">Senior SEO Writer</h2>
-                    <h4 class="text-center text-sm">PT MainGames Indonesia | <span class="bx bx-location-plus"> Jakarta, Indonesia</span></h4>
-                    <span class="block text-sm font-medium text-center text-yellow-400">IDR 10 Juta - 15 Juta Per Bulan</span>
-                    <span class="block text-sm text-center">Ditayangkan pada 15 July 2023</span>
-                </div>
-            </div>
-            <hr class="m-3" />
-            <div class="content m-1 p-2">
-                <h4 class="text-base font-medium mb-2">Keuntungan</h4>
-                <ul class="text-sm text-justify">
-                    <li>Agile, Pace-fast, Millennial Environment</li>
-                    <li>BPJS TK & Kesehatan</li>
-                    <li>Medical Reimbursement and Daily allowance</li>
-                </ul>
-                <br />
-                <h4 class="text-base font-medium mb-2">Deskripsi Pekerjaan</h4>
-                <ul class="text-sm text-justify">
-                    <li>
-                        We are seeking a talented individual to join our team as a Content Writer. In this role, you will be responsible for writing SEO-friendly English articles
-                        for our blog site, ensuring high visibility and engagement.
-                    </li>
-                    <li>
-                        You will also optimize and update previous articles to improve their search engine rankings. Additionally, you will conduct research to identify topics that
-                        resonate with our users and create original content based on competitor analysis. Your ability to identify user needs and recommend new topics will be
-                        crucial in enhancing our website's content strategy.
-                    </li>
-                </ul>
-                <br />
-                <h4 class="text-base font-medium mb-2">Responsibilities</h4>
-                <ul class="text-sm text-justify">
-                    <li>Producing SEO-friendly content. Knowledge and experience in the financial, crypto, or web3 sector are a plus.</li>
-                    <li>Optimizing, enhancing, and updating existing SEO English articles.</li>
-                    <li>Conducting comprehensive research on topics relevant to our users.</li>
-                    <li>Generating original content following a thorough analysis of competitors.</li>
-                    <li>Recognizing user needs and detecting gaps in our current website content.</li>
-                    <li>Suggesting new topics derived from user needs and content gaps.</li>
-                </ul>
-                <br />
-                <h4 class="text-base font-medium mb-2">Requirements</h4>
-                <ul class="text-sm text-justify">
-                    <li>Dynamic and energetic individual.</li>
-                    <li>Bachelor's degree in any field with a solid GPA.</li>
-                    <li>Good academic performance in high school.</li>
-                    <li>A minimum of 2 years of work experience in writing English articles on NFTs/Crypto/Blockchain, adhering to SEO standards.</li>
-                    <li>Experience in generating game-related content is highly preferred, along with a strong passion for gaming and technology.</li>
-                    <li>A minimum of 1 year of work experience at large media companies is highly desirable.</li>
-                    <li>A good understanding of on-page SEO and content editing is a substantial advantage.</li>
-                    <li>Ability to work swiftly under tight deadlines and be open to constructive feedback.</li>
-                    <li>Proficient English communication skills.</li>
-                </ul>
-                <br />
-                <h4 class="text-base font-medium mb-2">Note</h4>
-                <ul class="text-sm text-justify">
-                    <li>A skills test will be administered to all suitable candidates.</li>
-                    <li>Only candidates who pass the test will be invited for an interview.</li>
-                </ul>
-                <br />
-                <div class="grid">
-                    <h4 class="text-base font-medium mb-2">Informasi Tambahan</h4>
-                    <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1">
-                        <div class="text-sm">
-                            <h5 class="font-medium">Tingkat Pekerjaan</h5>
-                            <span>Pegawai (non-manajemen & non-supervisor)</span>
+        <div class="mx-auto flex flex-col min-h-screen">
+            <!-- Navbar Start -->
+            <nav class="top-0">
+                <nav class="bg-gray-50 rounded-b-md border-b-2 border-gray-300 shadow-sm">
+                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                        <a href="#" class="flex items-center">
+                            <img src="../media/piksi.png" class="h-10 md:h-12 mr-3" alt="CDC Logo" />
+                            <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap">Career Development Center</span>
+                        </a>
+                        <div class="flex md:order-2">
+                            <button
+                                type="button"
+                                data-collapse-toggle="navbar-search"
+                                aria-controls="navbar-search"
+                                aria-expanded="false"
+                                class="md:hidden focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+                            >
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                            <div class="relative hidden md:block">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                    <span class="sr-only">Search icon</span>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="search-navbar"
+                                    class="block w-full text-gray-900 p-2 pl-10 text-sm border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Search..."
+                                />
+                            </div>
+                            <button
+                                data-collapse-toggle="navbar-search"
+                                type="button"
+                                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                aria-controls="navbar-search"
+                                aria-expanded="false"
+                            >
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                </svg>
+                            </button>
                         </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Kualifikasi</h5>
-                            <span>Sarjana (S1), Diploma Pascasarjana, Gelar Professional, Magister (S2)</span>
-                        </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Pengalaman kerja</h5>
-                            <span>2 Tahun</span>
-                        </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Jenis Pekerjaan</h5>
-                            <span>Penuh Waktu</span>
-                        </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Spesialisasi Pekerjaan</h5>
-                            <span>Penjualan / Pemasaran, Digital Marketing</span>
+                        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                            <div class="relative mt-3 md:hidden">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="search-navbar"
+                                    class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Search..."
+                                />
+                            </div>
+                            <ul
+                                class="flex flex-col p-4 md:p-0 mt-4 lg:text-base font-medium border border-gray-100 rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+                            >
+                                <li>
+                                    <a
+                                        href="../index.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Beranda</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="../pages/profil-cdc.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Profil CDC</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="../pages/kategori-pekerjaan.html"
+                                        class="block py-2 pl-3 pr-4 md:text-primary underline bg-primary rounded md:bg-transparent md:p-0"
+                                        aria-current="page"
+                                        >Kategori Pekerjaan</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="../pages/berita-tips.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Berita & Tips</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="../pages/tentang-kami.html"
+                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        >Tentang kami</a
+                                    >
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <br />
-                <h4 class="text-base font-medium mb-2">Tentang Perusahaan</h4>
-                <p class="text-sm text-justify">
-                    PT MainGames Indonesia is a leading Creator Service Provider (CSP) serving gaming creators across Indonesia, Pakistan, Bangladesh, Malaysia, Taiwan, Sri Lanka
-                    and Nepal.Our mission is to help nurture creators from the next billion people to realize their full potential as game streamers, via a combination of
-                    technology, operational excellence and genuine respect for their fans and communities. Now, everyone can stream! So, If you are a gaming enthusiast, fun-loving,
-                    and passionate person, lets join our team and strive together for greatness!
-                </p>
-                <br />
-                <div class="grid">
-                    <h4 class="text-base font-medium mb-2">Informasi Tambahan Perusahaan</h4>
-                    <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1">
-                        <div class="text-sm">
-                            <h5 class="font-medium">Ukuran Perusahaan</h5>
-                            <span>1- 50 pekerja</span>
+                </nav>
+                <nav class="mx-auto md:w-last rounded-b-md border-b-2 border-gray-300">
+                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                        <!-- Time Section (Left) -->
+                        <div class="time flex text-center">
+                            <div class="display-date rounded-md cursor-pointer">
+                                <div class="calender hidden md:block">
+                                    <span id="day">day</span>,
+                                    <span id="daynum">00</span>
+                                    <span id="month">month</span>
+                                    <span id="year">0000</span>
+                                </div>
+                                <span class="display-time text-sm md:text-base"></span>
+                            </div>
                         </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Waktu Proses Lamaran</h5>
-                            <span>3 Hari</span>
-                        </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Industri</h5>
-                            <span>Komputer/Teknik Informatika (Perangkat Lunak)</span>
-                        </div>
-                        <div class="text-sm">
-                            <h5 class="font-medium">Tunjangan dan lainnya</h5>
-                            <span>Asuransi kesehatan, Parkir, Waktu regular, Senin - Jumat, Kasual (contoh: Kaos)</span>
+                        <!-- Login-User Section (Right) -->
+                        <div class="login-user rounded-full cursor-pointer">
+                            <span id="userPic" class="text-sm md:text-base text-white">
+                                <img src="../media/huh.jpg" alt="userPic" class="rounded-full h-8 md:h-10" />
+                            </span>
+                            <div id="menuContainer" class="hidden absolute right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-xl z-10">
+                                <ul class="py-1 bg-primary rounded-md">
+                                    <li>
+                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
+                                            <span class="bx bx-key"></span> Change Password
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
+                                            <span class="bx bxs-log-out"></span> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </body>
+                </nav>
+            </nav>
+            <!-- Navbar End -->
 
-    <script src="script.js"></script>
+            <!-- Main Content Start -->
+            <main class="flex-1 w-full md:w-11/12 mx-auto">
+                <!-- Back Beranda Start -->
+                <div class="p-5 my-3 font-medium rounded-t-lg rounded-b-md border-b-2 border-gray-300">
+                    <a href="../index.html" class="text-primary hover:text-black">Beranda</a>
+                    <a href="../pages/kategori-pekerjaan.html" class="text-secondary hover:text-black">| Kategori Pekerjaan</a>
+                    <span>| Pekerjaan</span>
+                </div>
+                <!-- Back Beranda End -->
+
+                <div class="flex flex-wrap my-3 box-border p-3 md:p-0">
+                    <section class="w-full md:w-2/3 border py-2 border-gray-200 md:rounded-s-lg">
+                        <div class="header">
+                            <div class="flex justify-center m-2">
+                                <img src="../media/2.jpg" alt="Logo Perusahaan" class="rounded-lg w-20 object-cover" />
+                            </div>
+                            <div class="m-1 tracking-wide leading-relaxed">
+                                <h2 class="text-center font-medium text-lg">Senior SEO Writer</h2>
+                                <h4 class="text-center text-sm">PT MainGames Indonesia | <span class="bx bx-location-plus"> Jakarta, Indonesia</span></h4>
+                                <span class="block text-sm font-medium text-center text-yellow-400">IDR 10 Juta - 15 Juta Per Bulan</span>
+                                <span class="block text-sm text-center">Ditayangkan pada 15 July 2023</span>
+                            </div>
+                        </div>
+                        <hr class="m-3" />
+                        <div class="content m-1 p-2">
+                            <h4 class="text-base font-medium mb-2">Keuntungan</h4>
+                            <ul class="text-sm text-justify">
+                                <li>Agile, Pace-fast, Millennial Environment</li>
+                                <li>BPJS TK & Kesehatan</li>
+                                <li>Medical Reimbursement and Daily allowance</li>
+                            </ul>
+                            <br />
+                            <h4 class="text-base font-medium mb-2">Deskripsi Pekerjaan</h4>
+                            <ul class="text-sm text-justify">
+                                <li>
+                                    We are seeking a talented individual to join our team as a Content Writer. In this role, you will be responsible for writing SEO-friendly
+                                    English articles for our blog site, ensuring high visibility and engagement.
+                                </li>
+                                <li>
+                                    You will also optimize and update previous articles to improve their search engine rankings. Additionally, you will conduct research to identify
+                                    topics that resonate with our users and create original content based on competitor analysis. Your ability to identify user needs and recommend
+                                    new topics will be crucial in enhancing our website's content strategy.
+                                </li>
+                            </ul>
+                            <br />
+                            <h4 class="text-base font-medium mb-2">Responsibilities</h4>
+                            <ul class="text-sm text-justify">
+                                <li>Producing SEO-friendly content. Knowledge and experience in the financial, crypto, or web3 sector are a plus.</li>
+                                <li>Optimizing, enhancing, and updating existing SEO English articles.</li>
+                                <li>Conducting comprehensive research on topics relevant to our users.</li>
+                                <li>Generating original content following a thorough analysis of competitors.</li>
+                                <li>Recognizing user needs and detecting gaps in our current website content.</li>
+                                <li>Suggesting new topics derived from user needs and content gaps.</li>
+                            </ul>
+                            <br />
+                            <h4 class="text-base font-medium mb-2">Requirements</h4>
+                            <ul class="text-sm text-justify">
+                                <li>Dynamic and energetic individual.</li>
+                                <li>Bachelor's degree in any field with a solid GPA.</li>
+                                <li>Good academic performance in high school.</li>
+                                <li>A minimum of 2 years of work experience in writing English articles on NFTs/Crypto/Blockchain, adhering to SEO standards.</li>
+                                <li>Experience in generating game-related content is highly preferred, along with a strong passion for gaming and technology.</li>
+                                <li>A minimum of 1 year of work experience at large media companies is highly desirable.</li>
+                                <li>A good understanding of on-page SEO and content editing is a substantial advantage.</li>
+                                <li>Ability to work swiftly under tight deadlines and be open to constructive feedback.</li>
+                                <li>Proficient English communication skills.</li>
+                            </ul>
+                            <br />
+                            <h4 class="text-base font-medium mb-2">Note</h4>
+                            <ul class="text-sm text-justify">
+                                <li>A skills test will be administered to all suitable candidates.</li>
+                                <li>Only candidates who pass the test will be invited for an interview.</li>
+                            </ul>
+                            <br />
+                            <div class="grid">
+                                <h4 class="text-base font-medium mb-2">Informasi Tambahan</h4>
+                                <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1">
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Tingkat Pekerjaan</h5>
+                                        <span>Pegawai (non-manajemen & non-supervisor)</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Kualifikasi</h5>
+                                        <span>Sarjana (S1), Diploma Pascasarjana, Gelar Professional, Magister (S2)</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Pengalaman kerja</h5>
+                                        <span>2 Tahun</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Jenis Pekerjaan</h5>
+                                        <span>Penuh Waktu</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Spesialisasi Pekerjaan</h5>
+                                        <span>Penjualan / Pemasaran, Digital Marketing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <h4 class="text-base font-medium mb-2">Tentang Perusahaan</h4>
+                            <p class="text-sm text-justify">
+                                PT MainGames Indonesia is a leading Creator Service Provider (CSP) serving gaming creators across Indonesia, Pakistan, Bangladesh, Malaysia, Taiwan,
+                                Sri Lanka and Nepal.Our mission is to help nurture creators from the next billion people to realize their full potential as game streamers, via a
+                                combination of technology, operational excellence and genuine respect for their fans and communities. Now, everyone can stream! So, If you are a
+                                gaming enthusiast, fun-loving, and passionate person, lets join our team and strive together for greatness!
+                            </p>
+                            <br />
+                            <div class="grid">
+                                <h4 class="text-base font-medium mb-2">Informasi Tambahan Perusahaan</h4>
+                                <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1">
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Ukuran Perusahaan</h5>
+                                        <span>1- 50 pekerja</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Waktu Proses Lamaran</h5>
+                                        <span>3 Hari</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Industri</h5>
+                                        <span>Komputer/Teknik Informatika (Perangkat Lunak)</span>
+                                    </div>
+                                    <div class="text-sm">
+                                        <h5 class="font-medium">Tunjangan dan lainnya</h5>
+                                        <span>Asuransi kesehatan, Parkir, Waktu regular, Senin - Jumat, Kasual (contoh: Kaos)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mt-7 mb-3" />
+                            <div class="flex flex-wrap justify-center md:justify-end">
+                                <button
+                                    type="submit"
+                                    class="mt-3 p-2.5 md:p-3 w-36 font-medium bg-secondary text-white rounded-lg hover:font-semibold hover:shadow-lg hover:underline"
+                                >
+                                    Lamar Pekerjaan
+                                </button>
+                                <button type="menu" class="mx-2 mt-3 w-36 font-medium bg-primary text-white rounded-lg hover:font-semibold hover:shadow-lg">
+                                    <a href="../pages/tentang-kami.html#pesan" class="p-2.5 md:p-3 hover:underline">Hubungi Admin</a>
+                                </button>
+                                <button type="menu" class="mt-3 p-2.5 md:p-3 w-36 font-medium bg-blue-600 text-white rounded-lg hover:font-semibold hover:shadow-lg">
+                                    <a href="../pages/kategori-pekerjaan.html" class="p-2.5 md:p-3 hover:underline">Batal</a>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <aside class="w-full md:w-1/3 mt-5 md:mt-0 border border-gray-200 md:rounded-e-lg p-3">
+                        <a
+                            href="#"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        >
+                            <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" src="../media/loker1.jpeg" alt="" />
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-justify text-base font-medium tracking-tight text-gray-900 dark:text-white">
+                                    Lowongan Dosen Tetap Politeknik Piksi Ganesha Bidang Kesehatan S.D 17 Juni 2023
+                                </h5>
+                                <p class="mb-3 text-justify text-sm text-gray-700 dark:text-gray-400">
+                                    Politeknik Piksi Ganesha Bandung Membuka Lowongan Dosen Tetap Politeknik Piksi Ganesha Bidang Kesehatan S.D 17 Juni 2023.
+                                    <span class="text-primary">Selengkapnya..</span>
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            href="#"
+                            class="flex flex-col items-center my-2 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        >
+                            <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" src="../media/loker2.jpeg" alt="" />
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-justify text-base font-medium tracking-tight text-gray-900 dark:text-white">
+                                    Lowongan Dosen Tamu/Praktisi S3 Doktor Politeknik Piksi Ganesha S.D 17 Juni 2023
+                                </h5>
+                                <p class="mb-3 text-justify text-sm text-gray-700 dark:text-gray-400">
+                                    Politeknik Piksi Ganesha Bandung Membuka Lowongan Dosen Tamu/Praktisi S3 Doktor Politeknik Piksi Ganesha S.D 17 Juni 2023.
+                                    <span class="text-primary">Selengkapnya..</span>
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.niagahoster.co.id/blog/cara-mendapatkan-uang-dari-freelancer/"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        >
+                            <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" src="../media/5.jpg" alt="" />
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-justify text-base font-medium tracking-tight text-gray-900 dark:text-white">
+                                    7+ Cara Menjadi Freelancer Online untuk Mendapatkan Uang Tambahan
+                                </h5>
+                                <p class="mb-3 text-justify text-sm text-gray-700 dark:text-gray-400">
+                                    Anda tertarik segera terjun ke dunia freelancer? Namun, masih bingung bagaimana cara mendapatkan uang dari freelancer? Tenang, kami punya tips
+                                    cara menjadi freelance pemula yang bisa diterapkan dengan mudah. Yuk simak penjelasannya!
+                                    <span class="text-primary">Selengkapnya..</span>
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.niagahoster.co.id/blog/cara-mendapatkan-uang-dari-freelancer/"
+                            class="flex flex-col items-center my-2 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        >
+                            <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" src="../media/interview.jpg" alt="" />
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-justify text-base font-medium tracking-tight text-gray-900 dark:text-white">
+                                    7 Cara Interview Kerja yang Baik Agar Diterima dan Penting Disimak
+                                </h5>
+                                <p class="mb-3 text-justify text-sm text-gray-700 dark:text-gray-400">
+                                    Interview adalah salah satu tahap yang perlu dilakukan saat melamar kerja. Tahap interview mungkin cukup mendebarkan, terlebih untuk seorang
+                                    fresh graduate.
+                                    <span class="text-primary">Selengkapnya..</span>
+                                </p>
+                            </div>
+                        </a>
+                    </aside>
+                </div>
+            </main>
+            <!-- Main Content End -->
+
+            <!-- Main Footer Start -->
+            <footer class="mt-16 bg-white border-t-2 border-gray-300 shadow-md">
+                <div class="mx-auto w-full max-w-screen-xl">
+                    <div class="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                        <div>
+                            <img src="../media/piksi.png" alt="piksi logo" class="w-5/12 md:w-2/3" />
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Temukan kami</h2>
+                            <p class="mb-4 text-gray-500 font-medium mr-3">
+                                <i class="bx bx-current-location"></i> Jl. Gatot Subroto No.301, Maleer, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
+                            </p>
+                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-mail-send"></i> piksiganeshaonline@gmail.com</p>
+                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-phone"></i> (022) 87340030</p>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Quick Links</h2>
+                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                                <li class="mb-4">
+                                    <a href="../index.html" class="hover:underline">Beranda</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="../pages/profil-cdc.html" class="hover:underline">Profil CDC</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="../pages/kategori-pekerjaan.html" class="hover:underline">Kategori Pekerjaan</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="../pages/berita-tips.html" class="hover:underline">Berita & Tips</a>
+                                </li>
+                                <li class="mb-4">
+                                    <a href="../pages/tentang-kami.html" class="hover:underline">Tentang kami</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
+                                width="100%"
+                                height="220"
+                                style="border: 0"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer>
+                <div class="px-4 py-6 rounded-t-lg border-t-2 border-gray-300 shadow-md md:flex md:items-center md:justify-between">
+                    <span class="text-sm text-gray-500 font-medium sm:text-center">© 2023 <a href="../index.html">SIM CDC™</a>. All Rights Reserved. </span>
+                    <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+                        <span
+                            ><a href="https://api.whatsapp.com/send?phone=628156027000" target="_blank" rel="noopener noreferrer">
+                                <img src="../media/icon/whatsapp.png" alt="ppgWhatsapp" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://instagram.com/piksi_ganesha/" target="_blank" rel="noopener noreferrer">
+                                <img src="../media/icon/instagram.png" alt="ppgInstagram" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://www.facebook.com/piksiganeshabdg1" target="_blank" rel="noopener noreferrer"
+                                ><img src="../media/icon/facebook.png" alt="ppgFacebook" class="h-5"
+                            /></a>
+                        </span>
+                        <span
+                            ><a href="https://www.youtube.com/channel/UCD8IxCl1KY3fvkR0b9BOiqQ" target="_blank" rel="noopener noreferrer"
+                                ><img src="../media/icon/youtube.png" alt="ppgYoutube" class="h-5"
+                            /></a>
+                        </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- Main Footer End -->
+        </div>
+    </body>
+    <script src="../script.js"></script>
 </html>
