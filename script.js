@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Fungsi untuk mengganti visibilitas kolom pencarian
     function toggleSearchBar() {
         navbarSearch.classList.toggle("hidden");
+        navbarSearch.classList.toggle("opacity-100");
     }
 
     // Fungsi untuk mengganti visibilitas menu di perangkat mobile
