@@ -1,443 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Tailwind CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Boxicons CDN Link -->
-        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-        <!-- CSS Style -->
-        <link rel="stylesheet" href="style.css" />
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="style.css" />
 
-        <!-- Favicon PPG -->
-        <link rel="shortcut icon" href="media/favicon/favicon.ico" type="image/x-icon" />
+    <!-- Favicon PPG -->
+    <link
+      rel="shortcut icon"
+      href="media/favicon/favicon.ico"
+      type="image/x-icon"
+    />
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: " #800080",
-                            secondary: "#daa520",
-                        },
-                        width: {
-                            last: "95%",
-                        },
-                    },
-                },
-            };
-        </script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: " #800080",
+              secondary: "#daa520",
+            },
+            width: {
+              last: "95%",
+            },
+          },
+        },
+      };
+    </script>
 
-        <title>SIM CDC | Beranda</title>
-    </head>
-    <body>
-        <div class="mx-auto flex flex-col min-h-screen">
-            <!-- Navbar Start -->
-            <nav class="top-0">
-                <nav class="bg-gray-50 rounded-b-md border-b-2 border-gray-300 shadow-sm">
-                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                        <a href="#" class="flex items-center">
-                            <img src="media/piksi.png" class="h-10 md:h-12 mr-3" alt="CDC Logo" />
-                            <span id="navbar-title" class="self-center text-2xl font-semibold whitespace-nowrap">Career Development Center</span>
-                        </a>
-                        <div class="flex md:order-2">
-                            <button
-                                data-collapse-toggle="navbar-search"
-                                type="button"
-                                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
-                                aria-controls="navbar-search"
-                                aria-expanded="false"
-                            >
-                                <span class="sr-only">Open main menu</span>
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition" id="navbar-search">
-                            <ul
-                                class="flex flex-col p-4 md:p-0 mt-4 lg:text-base font-medium border border-gray-100 rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
-                            >
-                                <li>
-                                    <a
-                                        href="index.html"
-                                        class="block text-white py-2 pl-3 pr-4 md:text-primary underline bg-primary rounded md:bg-transparent md:p-0"
-                                        aria-current="page"
-                                        >Beranda</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="pages/profil-cdc.html"
-                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
-                                        >Profil CDC</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="pages/kategori-pekerjaan.html"
-                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
-                                        >Kategori Pekerjaan</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="pages/berita-tips.html"
-                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
-                                        >Berita & Tips</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="pages/tentang-kami.html"
-                                        class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
-                                        >Tentang kami</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <nav class="mx-auto md:w-last rounded-b-md border-b-2 border-gray-300">
-                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                        <!-- Time Section (Left) -->
-                        <div class="time flex text-center">
-                            <div class="display-date rounded-md cursor-pointer">
-                                <div class="calender hidden md:block">
-                                    <span id="day">day</span>,
-                                    <span id="daynum">00</span>
-                                    <span id="month">month</span>
-                                    <span id="year">0000</span>
-                                </div>
-                                <span class="display-time text-sm md:text-base"></span>
-                            </div>
-                        </div>
-                        <!-- Login-User Section (Right) -->
-                        <div class="login-user rounded-full cursor-pointer">
-                            <span id="userPic" class="text-sm md:text-base text-white">
-                                <img src="media/huh.jpg" alt="userPic" class="rounded-full h-8 md:h-10" />
-                            </span>
-                            <div id="menuContainer" class="hidden absolute right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-xl z-10">
-                                <ul class="py-1 bg-primary rounded-md">
-                                    <li>
-                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
-                                            <span class="bx bx-key"></span> Change Password
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700">
-                                            <span class="bx bxs-log-out"></span> Logout
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </nav>
-            <!-- Navbar End -->
-
-            <!-- Main Content Start -->
-            <main class="flex-1 w-full md:w-11/12 mx-auto">
-                <!-- Back Beranda Start -->
-                <div class="p-5 my-3 font-medium rounded-t-lg rounded-b-md border-b-2 border-gray-300">
-                    <a href="#" class="text-primary hover:text-black">Beranda</a>
-                    <span>| Career Development Center</span>
+    <title>SIM CDC | Beranda</title>
+  </head>
+  <body>
+    <div class="mx-auto flex flex-col min-h-screen">
+      <!-- Navbar Start -->
+      <nav class="top-0">
+        <nav
+          class="bg-gray-50 rounded-b-md border-b-2 border-gray-300 shadow-sm"
+        >
+          <div
+            class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+          >
+            <a href="#" class="flex items-center">
+              <img
+                src="media/piksi.png"
+                class="h-10 md:h-12 mr-3"
+                alt="CDC Logo"
+              />
+              <span
+                id="navbar-title"
+                class="self-center text-2xl font-semibold whitespace-nowrap"
+                >Career Development Center</span
+              >
+            </a>
+            <div class="flex md:order-2">
+              <button
+                data-collapse-toggle="navbar-search"
+                type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-search"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition"
+              id="navbar-search"
+            >
+              <ul
+                class="flex flex-col p-4 md:p-0 mt-4 lg:text-base font-medium border border-gray-100 rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+              >
+                <li>
+                  <a
+                    href="index.html"
+                    class="block text-white py-2 pl-3 pr-4 md:text-primary underline bg-primary rounded md:bg-transparent md:p-0"
+                    aria-current="page"
+                    >Beranda</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="pages/profil-cdc.html"
+                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
+                    >Profil CDC</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="pages/kategori-pekerjaan.html"
+                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
+                    >Kategori Pekerjaan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="pages/berita-tips.html"
+                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
+                    >Berita & Tips</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="pages/tentang-kami.html"
+                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:underline md:hover:bg-transparent md:hover:text-primary md:p-0"
+                    >Tentang kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <nav class="mx-auto md:w-last rounded-b-md border-b-2 border-gray-300">
+          <div
+            class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+          >
+            <!-- Time Section (Left) -->
+            <div class="time flex text-center">
+              <div class="display-date rounded-md cursor-pointer">
+                <div class="calender hidden md:block">
+                  <span id="day">day</span>,
+                  <span id="daynum">00</span>
+                  <span id="month">month</span>
+                  <span id="year">0000</span>
                 </div>
-                <!-- Back Beranda End -->
+                <span class="display-time text-sm md:text-base"></span>
+              </div>
+            </div>
+            <!-- Login-User Section (Right) -->
+            <div class="login-user rounded-full cursor-pointer">
+              <span id="userPic" class="text-sm md:text-base text-white">
+                <img
+                  src="media/huh.jpg"
+                  alt="userPic"
+                  class="rounded-full h-8 md:h-10"
+                />
+              </span>
+              <div
+                id="menuContainer"
+                class="hidden absolute right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-xl z-10"
+              >
+                <ul class="py-1 bg-primary rounded-md">
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700"
+                    >
+                      <span class="bx bx-key"></span> Change Password
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-sm text-white px-4 py-2 rounded-md hover:bg-white hover:text-gray-700"
+                    >
+                      <span class="bx bxs-log-out"></span> Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </nav>
+      <!-- Navbar End -->
 
-                <!-- Section Carousel Start -->
-                <section class="mt-5">
-                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-96 md:h-[500px] overflow-hidden rounded-lg">
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/1.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/2.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/3.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/4.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/5.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/6.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/7.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/8.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/9.jpeg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img
-                                    src="media/10.jpg"
-                                    class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="carousel image"
-                                />
-                            </div>
-                        </div>
-                        <!-- Text in Slider -->
-                        <div class="absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                            <h3 class="font-medium text-sm md:text-xl text-white">Selamat datang di Career Development Center</h3>
-                            <h3 class="font-medium mt-2 mb-5 text-base md:text-3xl text-white">POLITEKNIK PIKSI GANESHA BANDUNG</h3>
-
-                            <div class="flex flex-col space-y-4 md:flex-row md:justify-center md:space-y-0 md:space-x-4">
-                                <a
-                                    href="pages/kategori-pekerjaan.html"
-                                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:underline hover:shadow-md focus:ring-4 focus:ring-blue-300"
-                                >
-                                    Lihat pekerjaan
-                                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                    </svg>
-                                </a>
-                                <a
-                                    href="pages/tentang-kami.html"
-                                    class="inline-flex justify-center hover:text-gray-900 hover:underline items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
-                                >
-                                    Tentang kami
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slider controls -->
-                        <button
-                            type="button"
-                            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                            data-carousel-prev
-                        >
-                            <span
-                                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
-                            >
-                                <svg
-                                    aria-hidden="true"
-                                    class="w-5 h-5 text-white sm:w-6 sm:h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button
-                            type="button"
-                            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                            data-carousel-next
-                        >
-                            <span
-                                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
-                            >
-                                <svg
-                                    aria-hidden="true"
-                                    class="w-5 h-5 text-white sm:w-6 sm:h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                </section>
-                <!-- Section Carousel End -->
-
-                <!-- Section Quotes Start -->
-                <section class="my-20">
-                    <figure class="max-w-screen-md mx-2 md:mx-0 text-center">
-                        <!-- Horizontal Line as Separator -->
-                        <hr class="border-t-2 border-gray-300 mx-auto mb-10" />
-
-                        <svg class="w-10 h-10 mx-auto mb-3 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-                            <path
-                                d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
-                            />
-                        </svg>
-                        <blockquote>
-                            <p class="text-2xl italic font-medium text-gray-900">"Jika kesempatan tidak mengetuk, bangunlah sebuah pintu."</p>
-                        </blockquote>
-                        <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                            <img class="w-6 h-6 rounded-full" src="media/Milton-Berle.jpg" alt="figure pic" />
-                            <div class="flex items-center divide-x-2 divide-gray-500">
-                                <cite class="pr-3 font-medium text-gray-900">Milton Berle</cite>
-                                <cite class="pl-3 text-sm text-gray-500">"Mr. Television"</cite>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <!-- Horizontal Line as Separator -->
-                    <hr class="mt-10 border-t-2 border-gray-300 mx-auto mb-10" />
-                </section>
-                <!-- Section Quotes End -->
-
-                <!-- Start block -->
-                <section class="bg-white">
-                    <div class="text-center py-8 text-gray-600">
-                        <span class="text-3xl font-semibold">OUR PARTNERS</span>
-
-                        <!-- Horizontal Line as Separator -->
-                        <hr class="mt-5 md:w-1/4 border-t-2 border-gray-300 mx-auto mb-10" />
-                    </div>
-                    <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16 flex justify-center">
-                        <div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-5">
-                            <a href="#" class="flex items-center justify-center">
-                                <img src="media/logo/Mutu Gading.png" alt="partner1" class="h-20" />
-                            </a>
-                            <a href="#" class="flex items-center justify-center">
-                                <img src="media/logo/Dago Energi Nusantara.png" alt="partner2" class="h-20" />
-                            </a>
-                            <a href="#" class="flex items-center justify-center">
-                                <img src="media/logo/UPI.png" alt="partner3" class="h-20" />
-                            </a>
-                            <a href="#" class="flex items-center justify-center">
-                                <img src="media/logo/Isabella.png" alt="partner4" class="h-20" />
-                            </a>
-                            <a href="#" class="flex items-center justify-center">
-                                <img src="media/logo/transtech.png" alt="partner5" class="h-20" />
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- End block -->
-            </main>
-            <!-- Main Content End -->
-
-            <!-- Main Footer Start -->
-            <footer class="mt-16 bg-white border-t-2 border-gray-300 shadow-md">
-                <div class="mx-auto w-full max-w-screen-xl">
-                    <div class="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-                        <div>
-                            <img src="media/piksi.png" alt="piksi logo" class="w-5/12 md:w-2/3" />
-                        </div>
-                        <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Temukan kami</h2>
-                            <p class="mb-4 text-gray-500 font-medium mr-3">
-                                <i class="bx bx-current-location"></i> Jl. Gatot Subroto No.301, Maleer, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
-                            </p>
-                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-mail-send"></i> piksiganeshaonline@gmail.com</p>
-                            <p class="mb-4 text-gray-500 font-medium mr-3"><i class="bx bx-phone"></i> (022) 87340030</p>
-                        </div>
-                        <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Quick Links</h2>
-                            <ul class="text-gray-500 font-medium">
-                                <li class="mb-4">
-                                    <a href="index.html" class="hover:underline">Beranda</a>
-                                </li>
-                                <li class="mb-4">
-                                    <a href="pages/profil-cdc.html" class="hover:underline">Profil CDC</a>
-                                </li>
-                                <li class="mb-4">
-                                    <a href="pages/kategori-pekerjaan.html" class="hover:underline">Kategori Pekerjaan</a>
-                                </li>
-                                <li class="mb-4">
-                                    <a href="pages/berita-tips.html" class="hover:underline">Berita & Tips</a>
-                                </li>
-                                <li class="mb-4">
-                                    <a href="pages/tentang-kami.html" class="hover:underline">Tentang kami</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-full">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
-                                width="100%"
-                                height="220"
-                                style="border: 0"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <footer>
-                <div class="px-4 py-6 rounded-t-lg border-t-2 border-gray-300 shadow-md md:flex md:items-center md:justify-between">
-                    <span class="text-sm text-gray-500 font-medium sm:text-center">© 2023 <a href="index.html">SIM CDC™</a>. All Rights Reserved. </span>
-                    <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
-                        <span
-                            ><a href="https://api.whatsapp.com/send?phone=628156027000" target="_blank" rel="noopener noreferrer">
-                                <img src="media/icon/whatsapp.png" alt="ppgWhatsapp" class="h-5"
-                            /></a>
-                        </span>
-                        <span
-                            ><a href="https://instagram.com/piksi_ganesha/" target="_blank" rel="noopener noreferrer">
-                                <img src="media/icon/instagram.png" alt="ppgInstagram" class="h-5"
-                            /></a>
-                        </span>
-                        <span
-                            ><a href="https://www.facebook.com/piksiganeshabdg1" target="_blank" rel="noopener noreferrer"
-                                ><img src="media/icon/facebook.png" alt="ppgFacebook" class="h-5"
-                            /></a>
-                        </span>
-                        <span
-                            ><a href="https://www.youtube.com/channel/UCD8IxCl1KY3fvkR0b9BOiqQ" target="_blank" rel="noopener noreferrer"
-                                ><img src="media/icon/youtube.png" alt="ppgYoutube" class="h-5"
-                            /></a>
-                        </span>
-                    </div>
-                </div>
-            </footer>
-            <!-- Main Footer End -->
+      <!-- Main Content Start -->
+      <main class="flex-1 w-full md:w-11/12 mx-auto">
+        <!-- Back Beranda Start -->
+        <div
+          class="p-5 my-3 font-medium rounded-t-lg rounded-b-md border-b-2 border-gray-300"
+        >
+          <a href="#" class="text-primary hover:text-black">Beranda</a>
+          <span>| Career Development Center</span>
         </div>
-    </body>
-    <script src="script.js"></script>
+        <!-- Back Beranda End -->
+
+        <!-- Section Carousel Start -->
+        <section class="mt-5">
+          <div
+            id="default-carousel"
+            class="relative w-full"
+            data-carousel="slide"
+          >
+            <!-- Carousel wrapper -->
+            <div class="relative h-96 md:h-[500px] overflow-hidden rounded-lg">
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/1.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/2.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/3.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/4.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/5.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/6.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/7.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/8.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/9.jpeg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img
+                  src="media/10.jpg"
+                  class="absolute object-cover w-full h-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="carousel image"
+                />
+              </div>
+            </div>
+            <!-- Text in Slider -->
+            <div
+              class="absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
+            >
+              <h3 class="font-medium text-sm md:text-xl text-white">
+                Selamat datang di Career Development Center
+              </h3>
+              <h3
+                class="font-medium mt-2 mb-5 text-base md:text-3xl text-white"
+              >
+                POLITEKNIK PIKSI GANESHA BANDUNG
+              </h3>
+
+              <div
+                class="flex flex-col space-y-4 md:flex-row md:justify-center md:space-y-0 md:space-x-4"
+              >
+                <a
+                  href="pages/kategori-pekerjaan.html"
+                  class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:underline hover:shadow-md focus:ring-4 focus:ring-blue-300"
+                >
+                  Lihat pekerjaan
+                  <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="pages/tentang-kami.html"
+                  class="inline-flex justify-center hover:text-gray-900 hover:underline items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
+                >
+                  Tentang kami
+                </a>
+              </div>
+            </div>
+
+            <!-- Slider controls -->
+            <button
+              type="button"
+              class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-prev
+            >
+              <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 text-white sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  ></path>
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-next
+            >
+              <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 text-white sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+        </section>
+        <!-- Section Carousel End -->
+
+        <!-- Section Quotes Start -->
+        <section class="my-20">
+          <figure class="max-w-screen-md mx-2 md:mx-auto text-center">
+            <!-- Horizontal Line as Separator -->
+            <hr class="border-t-2 border-gray-300 mx-auto mb-10" />
+
+            <svg
+              class="w-10 h-10 mx-auto mb-3 text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 18 14"
+            >
+              <path
+                d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+              />
+            </svg>
+            <blockquote>
+              <p class="text-2xl italic font-medium text-gray-900">
+                "Jika kesempatan tidak mengetuk, bangunlah sebuah pintu."
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center mt-6 space-x-3">
+              <img
+                class="w-6 h-6 rounded-full"
+                src="media/Milton-Berle.jpg"
+                alt="figure pic"
+              />
+              <div class="flex items-center divide-x-2 divide-gray-500">
+                <cite class="pr-3 font-medium text-gray-900">Milton Berle</cite>
+                <cite class="pl-3 text-sm text-gray-500">"Mr. Television"</cite>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Horizontal Line as Separator -->
+          <hr class="mt-10 border-t-2 border-gray-300 mx-auto mb-10" />
+        </section>
+        <!-- Section Quotes End -->
+
+        <!-- Start block -->
+        <section class="bg-white">
+          <div class="text-center py-8 text-gray-600">
+            <span class="text-3xl font-semibold">OUR PARTNERS</span>
+
+            <!-- Horizontal Line as Separator -->
+            <hr
+              class="mt-5 md:w-1/4 border-t-2 border-gray-300 mx-auto mb-10"
+            />
+          </div>
+          <div
+            class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16 flex justify-center"
+          >
+            <div
+              class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-5"
+            >
+              <a href="#" class="flex items-center justify-center">
+                <img
+                  src="media/logo/Mutu Gading.png"
+                  alt="partner1"
+                  class="h-20"
+                />
+              </a>
+              <a href="#" class="flex items-center justify-center">
+                <img
+                  src="media/logo/Dago Energi Nusantara.png"
+                  alt="partner2"
+                  class="h-20"
+                />
+              </a>
+              <a href="#" class="flex items-center justify-center">
+                <img src="media/logo/UPI.png" alt="partner3" class="h-20" />
+              </a>
+              <a href="#" class="flex items-center justify-center">
+                <img
+                  src="media/logo/Isabella.png"
+                  alt="partner4"
+                  class="h-20"
+                />
+              </a>
+              <a href="#" class="flex items-center justify-center">
+                <img
+                  src="media/logo/transtech.png"
+                  alt="partner5"
+                  class="h-20"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- End block -->
+      </main>
+      <!-- Main Content End -->
+
+      <!-- Main Footer Start -->
+      <footer class="mt-16 bg-white border-t-2 border-gray-300 shadow-md">
+        <div class="mx-auto w-full max-w-screen-xl">
+          <div class="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+            <div>
+              <img
+                src="media/piksi.png"
+                alt="piksi logo"
+                class="w-5/12 md:w-2/3"
+              />
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
+                Temukan kami
+              </h2>
+              <p class="mb-4 text-gray-500 font-medium mr-3">
+                <i class="bx bx-current-location"></i> Jl. Gatot Subroto No.301,
+                Maleer, Kec. Batununggal, Kota Bandung, Jawa Barat 40274
+              </p>
+              <p class="mb-4 text-gray-500 font-medium mr-3">
+                <i class="bx bx-mail-send"></i> piksiganeshaonline@gmail.com
+              </p>
+              <p class="mb-4 text-gray-500 font-medium mr-3">
+                <i class="bx bx-phone"></i> (022) 87340030
+              </p>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
+                Quick Links
+              </h2>
+              <ul class="text-gray-500 font-medium">
+                <li class="mb-4">
+                  <a href="index.html" class="hover:underline">Beranda</a>
+                </li>
+                <li class="mb-4">
+                  <a href="pages/profil-cdc.html" class="hover:underline"
+                    >Profil CDC</a
+                  >
+                </li>
+                <li class="mb-4">
+                  <a
+                    href="pages/kategori-pekerjaan.html"
+                    class="hover:underline"
+                    >Kategori Pekerjaan</a
+                  >
+                </li>
+                <li class="mb-4">
+                  <a href="pages/berita-tips.html" class="hover:underline"
+                    >Berita & Tips</a
+                  >
+                </li>
+                <li class="mb-4">
+                  <a href="pages/tentang-kami.html" class="hover:underline"
+                    >Tentang kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6710451483973!2d107.63716501401498!3d-6.929865369755946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e874298e7eff%3A0xe7113946f5e07c61!2sPoliteknik%20Piksi%20Ganesha%2C%20Kampus%20B!5e0!3m2!1sid!2sid!4v1675153432914!5m2!1sid!2sid"
+                width="100%"
+                height="220"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <footer>
+        <div
+          class="px-4 py-6 rounded-t-lg border-t-2 border-gray-300 shadow-md md:flex md:items-center md:justify-between"
+        >
+          <span class="text-sm text-gray-500 font-medium sm:text-center"
+            >© 2023 <a href="index.html">SIM CDC™</a>. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+            <span
+              ><a
+                href="https://api.whatsapp.com/send?phone=628156027000"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="media/icon/whatsapp.png"
+                  alt="ppgWhatsapp"
+                  class="h-5"
+              /></a>
+            </span>
+            <span
+              ><a
+                href="https://instagram.com/piksi_ganesha/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="media/icon/instagram.png"
+                  alt="ppgInstagram"
+                  class="h-5"
+              /></a>
+            </span>
+            <span
+              ><a
+                href="https://www.facebook.com/piksiganeshabdg1"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  src="media/icon/facebook.png"
+                  alt="ppgFacebook"
+                  class="h-5"
+              /></a>
+            </span>
+            <span
+              ><a
+                href="https://www.youtube.com/channel/UCD8IxCl1KY3fvkR0b9BOiqQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="media/icon/youtube.png" alt="ppgYoutube" class="h-5"
+              /></a>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Main Footer End -->
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
